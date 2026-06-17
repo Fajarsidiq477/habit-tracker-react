@@ -5,7 +5,19 @@ export default function Habit_Stats() {
 
     const { habits } = useContext(HabitContext)!
 
-    function completionRate(habits) {
+    const totalCompletedHabits = habits.map(
+                                    habit => habit.completed >= habit.target ? 1 : 0)
+                                    .reduce<number>((total, habit) => total + habit, 0)    
+
+    type Habit = {
+        id: number;
+        name: string;
+        target: number;
+        completed: number;
+        category: string;
+    }
+
+    function completionRate(habits: Habit[]) {
         const totalTarget = habits.reduce((total, habit) => total + habit.target, 0);
         const totalCompleted = habits.reduce((total, habit) => total + habit.completed, 0);
 
@@ -31,7 +43,7 @@ export default function Habit_Stats() {
                 </p>
 
                 <h2 className="mt-2 text-3xl font-bold text-green-600">
-                    { habits.filter(habit => habit.done).length }
+                    { totalCompletedHabits }
                 </h2>
             </div>
 

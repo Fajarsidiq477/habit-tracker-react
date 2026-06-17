@@ -1,14 +1,28 @@
-export function habitReducer(state, action) {
+type Habit = {
+    id: number;
+    name: string;
+    category: string;
+    target: number;
+    completed: number;
+}
+export function habitReducer(state: Habit[], action: any) {
+
+    const findHabitByID = state.find(habit => habit.id === action.payload)
+
+    if (!findHabitByID) {
+        return state
+    }
+
+
+
     switch(action.type) {
         case "ADD_HABIT":
             return [...state, action.payload]
         case "DELETE_HABIT":
-            return state.filter(habit => habit.id !== action.payload)
+            return state.filter(habit  => habit.id !== action.payload)
         case "INCREASE_COMPLETED":
-            let habit = state.find(habit => habit.id === action.payload)
-
             // if completed is less than target, increase completed
-            if(habit.completed < habit.target) {
+            if(findHabitByID.completed < findHabitByID.target) {
                 return state.map(habit => (habit.id === action.payload ? 
                     {...habit, completed: habit.completed + 1} : habit
                 ))
@@ -17,10 +31,8 @@ export function habitReducer(state, action) {
             return state
 
         case "DECREASE_COMPLETED":
-            habit = state.find(habit => habit.id === action.payload)
-
             // if completed is greater than 0, decrease completed
-            if(habit.completed > 0) {
+            if(findHabitByID.completed > 0) {
                 return state.map(habit => (habit.id === action.payload ? 
                     {...habit, completed: habit.completed - 1} : habit
                 ))

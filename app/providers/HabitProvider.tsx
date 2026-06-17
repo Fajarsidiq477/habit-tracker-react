@@ -6,11 +6,11 @@ import { habitReducer } from "../reducers/habitReducer";
 
 export function HabitProvider({ children } : any) {
     const initialHabits = [
-        {id: 1, name: "Read Book", target: 4, completed: 2, done: false},
-        {id: 2, name: "Coding", target: 3, completed: 0, done: false}
+        {id: 1, name: "Read Book", target: 4, completed: 2, category: "Study"},
+        {id: 2, name: "Coding", target: 3, completed: 0, category: "Study"}
     ];
 
-    const [habits, dispatch] = useReducer(habitReducer, initialHabits);   
+    const [habits, dispatch] = useReducer(habitReducer, initialHabits );   
     const [query, setQuery] = useState('')
     const [category, setCategory] = useState('')
 

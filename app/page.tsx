@@ -1,6 +1,5 @@
 "use client"
 
-import { useState, useEffect } from 'react'
 import Habit_Hero from './components/Habit_Hero';
 import Habit_Stats from './components/Habit_Stats';
 import Habit_Form from './components/Habit_Form';
