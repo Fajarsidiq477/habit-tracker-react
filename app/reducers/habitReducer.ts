@@ -5,7 +5,30 @@ type Habit = {
     target: number;
     completed: number;
 }
-export function habitReducer(state: Habit[], action: any) {
+
+type HabitAction =
+    | {
+        type: "ADD_HABIT"
+        payload: Habit
+    }
+    | {
+        type: "DELETE_HABIT"
+        payload: number
+    }
+    | {
+        type: "INCREASE_COMPLETED"
+        payload: number
+    }
+    | {
+        type: "DECREASE_COMPLETED"
+        payload: number
+    }
+    | {
+        type: "LOAD_HABITS"
+        payload: Habit[]
+    }
+
+export function habitReducer(state: Habit[], action: HabitAction) {
 
     switch(action.type) {
 

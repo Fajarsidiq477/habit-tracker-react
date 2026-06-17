@@ -9,7 +9,7 @@ type Habit = {
 }
 
 type HabitContextProps = {
-    habits: any
+    habits: Habit[]
     dispatch: any
     query: string
     setQuery: React.Dispatch<React.SetStateAction<string>>
