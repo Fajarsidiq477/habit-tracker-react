@@ -9,12 +9,12 @@ type Habit = {
 }
 
 type HabitContextProps = {
-    habits: Habit[],
-    dispatch: any,
-    query: string,
-    category: string,
-    setQuery: (query: string) => void,
-    setCategory: (category: string) => void
+    habits: any
+    dispatch: any
+    query: string
+    setQuery: React.Dispatch<React.SetStateAction<string>>
+    category: string
+    setCategory: React.Dispatch<React.SetStateAction<string>>
 }
 
 
