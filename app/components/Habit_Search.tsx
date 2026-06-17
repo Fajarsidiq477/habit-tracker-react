@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { HabitContext } from "../contexts/HabitContext"
 
 export default function Habit_Search() {
-    const { query, setQuery, category, setCategory } = useContext(HabitContext)
+    const { query, setQuery, category, setCategory } = useContext(HabitContext)!
 
     return (
         <section className="flex flex-col gap-4 md:flex-row">

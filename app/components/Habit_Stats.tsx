@@ -3,7 +3,7 @@ import { useContext } from "react"
 
 export default function Habit_Stats() {
 
-    const { habits } = useContext(HabitContext)
+    const { habits } = useContext(HabitContext)!
 
     function completionRate(habits) {
         const totalTarget = habits.reduce((total, habit) => total + habit.target, 0);

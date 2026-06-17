@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { HabitContext } from "../contexts/HabitContext";
 
 export default function Habit_List() {
-    const { habits, dispatch, query, category } = useContext(HabitContext)
+    const { habits, dispatch, query, category } = useContext(HabitContext)!
 
     function getPercentage(habit: any) {
         return Math.floor((habit.completed / habit.target) * 100);

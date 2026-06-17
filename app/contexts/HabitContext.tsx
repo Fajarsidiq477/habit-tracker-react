@@ -1,10 +1,12 @@
 import { createContext } from "react";
 
 type HabitContextProps = {
-    id: number;
-    name: string;
-    target: number;
-    completed: number;
+    habits: any,
+    dispatch: any,
+    query: string,
+    category: string,
+    setQuery: (query: string) => void,
+    setCategory: (category: string) => void
 }
 
 

@@ -2,7 +2,7 @@ import { useState, useContext } from "react"
 import { HabitContext } from "../contexts/HabitContext"
 
 export default function Habit_Form() {
-    const { habits, dispatch } = useContext(HabitContext)
+    const { habits, dispatch } = useContext(HabitContext)!
     
 
     const [form, setForm] = useState({
