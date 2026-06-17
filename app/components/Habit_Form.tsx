@@ -13,7 +13,7 @@ export default function Habit_Form() {
         completed: 0
     })
 
-    function handleSubmit(e) {
+    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
 
         // validasi
