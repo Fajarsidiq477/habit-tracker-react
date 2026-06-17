@@ -4,7 +4,10 @@ import { useState, useReducer, useEffect } from "react";
 import { HabitContext } from "../contexts/HabitContext";
 import { habitReducer } from "../reducers/habitReducer";
 
-export function HabitProvider({ children } : any) {
+type HabitProviderProps = {
+    children: React.ReactNode
+}
+export function HabitProvider({ children }: HabitProviderProps) {
     const initialHabits = [
         {id: 1, name: "Read Book", target: 4, completed: 2, category: "Study"},
         {id: 2, name: "Coding", target: 3, completed: 0, category: "Study"}
